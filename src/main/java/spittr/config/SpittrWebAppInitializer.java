@@ -15,6 +15,6 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0] { "/" }; //将Dispatcher映射到/路径
+        return new String[] { "/" }; //将Dispatcher映射到/路径
     }
 }
