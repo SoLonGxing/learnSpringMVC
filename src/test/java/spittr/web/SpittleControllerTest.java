@@ -34,7 +34,7 @@ public class SpittleControllerTest {
         .setSingleView(new InternalResourceView("/web/vie1ws/spittles.jsp"))
         .build();
 
-    mockMvc.perform(get("/spittles")) //对/spttles发起get请求
+    mockMvc.perform(get("/spittles?max=238900&count=50")) //对/spttles发起get请求
        .andExpect(view().name("spittles"))
        .andExpect(model().attributeExists("spittleList"))
        .andExpect(model().attribute("spittleList",
