@@ -23,18 +23,18 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 public class SpittleControllerTest {
 
   @Test
-  public void houldShowRecentSpittles() throws Exception {
+  public void shouldShowRecentSpittles() throws Exception {
     List<Spittle> expectedSpittles = createSpittleList(20);
-    SpittleRepository mockRepository = mock(SpittleRepository.class);
+    SpittleRepository mockRepository = mock(SpittleRepository.class);//Mock Repository
     when(mockRepository.findSpittles(Long.MAX_VALUE, 20))
         .thenReturn(expectedSpittles);
 
-    SpittleController controller = new SpittleController(mockRepository);
-    MockMvc mockMvc = standaloneSetup(controller)
-        .setSingleView(new InternalResourceView("/web/views/spittles.jsp"))
+    SpittleController controller = new SpittleController(mockRepository);//
+    MockMvc mockMvc = standaloneSetup(controller) //Mock Spring MVC
+        .setSingleView(new InternalResourceView("/web/vie1ws/spittles.jsp"))
         .build();
 
-    mockMvc.perform(get("/spittles"))
+    mockMvc.perform(get("/spittles")) //对/spttles发起get请求
        .andExpect(view().name("spittles"))
        .andExpect(model().attributeExists("spittleList"))
        .andExpect(model().attribute("spittleList",
