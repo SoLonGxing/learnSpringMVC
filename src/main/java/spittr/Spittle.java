@@ -22,6 +22,7 @@ public class Spittle {
         this.time = time;
         this.longitude = longitude;
         this.latityde = latitude;
+
     }
 
     public long getId(){
