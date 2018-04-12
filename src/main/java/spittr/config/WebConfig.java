@@ -17,7 +17,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     public ViewResolver viewResolver(){//配置JSP视图解释器
         System.out.println("ViewResolver initiated");
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/web/views/");
+        resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
